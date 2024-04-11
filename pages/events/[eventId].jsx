@@ -20,7 +20,7 @@ export default function EventDetails() {
       <EventLogistics
         data={event.date}
         imageAlt={event.title}
-        address={event.address}
+        address={event.location}
         image={event.image}
       />
       <EventContent>

@@ -6,6 +6,9 @@ export default function Home() {
   return (
     <>
       <div>
+        <header>
+          <nav></nav>
+        </header>
         <EventList items={featureEvents} />
       </div>
     </>
