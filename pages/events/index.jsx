@@ -1,7 +1,12 @@
+import Link from "next/link";
 import React from "react";
 
 const AllEvents = () => {
-  return <div>AllEvents</div>;
+  return (
+    <div>
+      <Link href="/">Hey</Link>
+    </div>
+  );
 };
 
 export default AllEvents;
