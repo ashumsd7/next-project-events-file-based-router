@@ -1,7 +1,11 @@
+import { getFeaturedEvents } from "@/dummtData";
 export default function Home() {
+  const featureEvents = getFeaturedEvents();
   return (
     <>
-      <main>Hello App</main>
+      <div>
+        <ul></ul>
+      </div>
     </>
   );
 }
