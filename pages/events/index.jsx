@@ -8,7 +8,7 @@ const AllEvents = () => {
   const router = useRouter();
   const events = getAllEvents();
   const onSearch = (year, month) => {
-    const fullPath = `/events/${year}/${month}/abc`;
+    const fullPath = `/events/${year}/${month}`;
     router.push(fullPath);
   };
   return (
