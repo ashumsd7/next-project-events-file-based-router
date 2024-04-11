@@ -1,4 +1,5 @@
 import EventList from "@/components/events/event-list";
+import Button from "@/components/ui/button";
 import { getFilteredEvents } from "@/dummtData";
 import { useRouter } from "next/router";
 import React from "react";
@@ -46,6 +47,14 @@ function FilteredEvents() {
     );
   return (
     <>
+      <Button
+        style={{
+          marginTop: "2rem",
+        }}
+        link="/"
+      >
+        Go back
+      </Button>
       <EventList items={events} />
     </>
   );

@@ -4,12 +4,12 @@ import classes from "./button.module.css";
 function Button(props) {
   if (props.link)
     return (
-      <Link className={classes.btn} href={props.link}>
+      <Link style={props.style} className={classes.btn} href={props.link}>
         {props.children}
       </Link>
     );
   return (
-    <button className={classes.btn} onClick={props.onclick}>
+    <button style={props.style} className={classes.btn} onClick={props.onclick}>
       {props.children}
     </button>
   );
