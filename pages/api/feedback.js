@@ -1,5 +1,15 @@
 import fs from "fs";
 import path from "path";
+
+function buildFeedbackPath() {
+  return path.join(process.cwd(), "data", "feedback.json");
+}
+
+function extractFeedback(filePath) {
+  const fileData = fs.readFileSync(filePath);
+  const data = JSON.parse(fileData);
+  return data;
+}
 function handler(req, res) {
   // receive GET | POST | DELETE | PUT | PATCH requests
 
@@ -16,10 +26,9 @@ function handler(req, res) {
     console.log("received payload", payload);
 
     // store in a databse
-    const filePath = path.join(process.cwd(), "data", "feedback.json");
+    const filePath = buildFeedbackPath();
 
-    const fileData = fs.readFileSync(filePath);
-    const data = JSON.parse(fileData);
+    const data = extractFeedback(filePath);
 
     data.push(payload);
 
@@ -30,8 +39,10 @@ function handler(req, res) {
       message: "Thanks for your feedback!",
     });
   } else {
+    const filePath = buildFeedbackPath();
+    const data = extractFeedback(filePath);
     res.status(200).json({
-      message: "This works",
+      data: data,
     });
   }
 }
