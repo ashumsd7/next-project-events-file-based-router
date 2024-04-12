@@ -20,7 +20,7 @@ export default function Home({ featureEvents }) {
 
 export async function getStaticProps(context) {
   const featureEvents = await getFeaturedEvents();
-  console.log("featureEvents 2", featureEvents);
+  // console.log("featureEvents 2", featureEvents);
   return {
     props: {
       featureEvents,

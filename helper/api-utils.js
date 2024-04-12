@@ -7,10 +7,10 @@ export async function getAllEvents() {
   const events = [];
   for (const key in res) {
     events.push({
-      id: key,
       ...res[key],
     });
   }
+  console.log("returning events", events);
 
   return events;
 }
@@ -33,6 +33,7 @@ export function getFilteredEvents(dateFilter) {
   return filteredEvents;
 }
 
-export function getEventById(id) {
-  return DUMMY_EVENTS.find((event) => event.id === id);
+export async function getEventById(id) {
+  const allEvemts = await getAllEvents();
+  return allEvemts.find((event) => event.id === id);
 }
