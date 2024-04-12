@@ -5,6 +5,7 @@ import Button from "../ui/button";
 import DateIcon from "../icons/date-icon";
 import ArrowIcon from "../icons/arrow-right-icon";
 import Addressicon from "../icons/address-icon";
+import Image from "next/image";
 function EventItem({ item }) {
   const humanReadabelDate = new Date(item.date).toLocaleDateString("en-us", {
     date: "numeric",
@@ -16,7 +17,7 @@ function EventItem({ item }) {
   const exploreLink = `/events/${item.id}`;
   return (
     <li className={classes.item}>
-      <img src={"/" + item.image} alt=""></img>
+      <Image width="320" height="160" src={"/" + item.image} alt=""></Image>
       <div className={classes.content}>
         <div className={classes.summary}>
           <h2>{item.title}</h2>
