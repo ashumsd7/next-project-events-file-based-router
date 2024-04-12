@@ -61,3 +61,7 @@ function FilteredEvents() {
 }
 
 export default FilteredEvents;
+
+
+// we can implement getServerSide props here beacuse 
+// here we will get multiple compbination of page base on year and month
