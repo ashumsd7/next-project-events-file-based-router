@@ -6,7 +6,7 @@ export default function App({ Component, pageProps }) {
   return (
     <Layout>
       <Head>
-        <meta name="viewport" content="initial.."></meta>
+        <meta name="viewport" content="initial-scale=1.0'"></meta>
       </Head>
       <Component {...pageProps} />
     </Layout>
