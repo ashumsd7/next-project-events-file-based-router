@@ -10,7 +10,7 @@ export async function getAllEvents() {
       ...res[key],
     });
   }
-  console.log("returning events", events);
+  //   console.log("returning events", events);
 
   return events;
 }

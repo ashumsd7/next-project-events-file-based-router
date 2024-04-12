@@ -33,9 +33,9 @@ export default function EventDetails({ event }) {
 
 export async function getStaticProps(context) {
   const eventId = context.params.eventId;
-  console.log("eventId is", eventId);
+  // console.log("eventId is", eventId);
   const event = await getEventById(eventId);
-  console.log("event is", event);
+  console.log("generating 234");
   if (!event) {
     return {
       notFound: true, // Return a 404 page if the event is not found
@@ -45,11 +45,13 @@ export async function getStaticProps(context) {
     props: {
       event,
     },
+    revalidate: 120,
   };
 }
 
 export async function getStaticPaths() {
   const events = await getAllEvents();
+
   // console.log("static paths", events);
   let paths = events?.map((data) => {
     return {
@@ -58,10 +60,10 @@ export async function getStaticPaths() {
       },
     };
   });
-  console.log("paths", paths);
+  // console.log("paths", paths);
 
   return {
     paths: paths,
-    fallback: true,
+    fallback: false,
   };
 }
